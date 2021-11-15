@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstrating Stuff</title>
+</head>
+<body>
+    <p id='monitor'>watch here</p>
+</body>
+<script>
+    // lots of ways to write JS functions
+    // old-skool
+    function doOldStuff(x){
+        return x*x // return the square of x
+    }
+    // new JS
+    const fnA = (x)=>{
+        return x*x
+    }
+
+    // use the functions
+    let resultOld = doOldStuff(3) // 9
+    let resultNew = fnA(3) // 9
+    console.log(`${resultOld} and ${resultNew}`)
+
+
+</script>
+</html>

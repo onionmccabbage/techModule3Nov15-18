@@ -1,0 +1,15 @@
+/* there are three types of CSS style */
+/* tag style - automatically applied */
+p {color:brown;}
+h1 {font-size: 180%;} /* 180% is the same as 1.8em */
+p, li {font-family: Verdana, Geneva, Tahoma, sans-serif;}
+/* set the input tag to have a yellow-ish background */
+input {background-color: khaki;}
+
+/* class style - manually apply anywhere */
+.highlight {background-color: chartreuse;}
+
+/* ID style - manually apply ONCE */
+#legaltext {background-color: black; 
+            color: blanchedalmond; 
+            font-family: 'Courier New', Courier, monospace;}
