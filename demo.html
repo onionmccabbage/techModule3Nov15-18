@@ -15,15 +15,23 @@
     function doOldStuff(x){
         return x*x // return the square of x
     }
-    // new JS
+    // new JS - various ways to write functions
     const fnA = (x)=>{
         return x*x
     }
+    // you will see examples using short-hand like this
+    const fnB = x =>{ // if there is exactly ONE param, no need for brackets
+        return x*x
+    }
+    // if there is only ONE line of returned data, leave our curlies AND return keyword
+    const fnC = x => x*x 
 
     // use the functions
     let resultOld = doOldStuff(3) // 9
     let resultNew = fnA(3) // 9
-    console.log(`${resultOld} and ${resultNew}`)
+    let resultB = fnB(3) // 9
+    let resultC = fnC(3) // 9
+    console.log(`${resultOld} and ${resultNew} also ${resultB} and ${resultC}`)
 
 
 </script>
