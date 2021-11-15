@@ -7,6 +7,8 @@ let model = [ // this is a JavaScript array of Objects
 // explore JSON tools
 let j = JSON.stringify(model) // converts anything to JSON (which is text)
 console.log(j, typeof(j))
+let o = JSON.parse(j) // convert JSON back into a JavaScript structure
+console.log(o, typeof(o))
 
 // event call-back functions
 const handleButton = () => {
@@ -23,7 +25,9 @@ const handleButton = () => {
 
     // use these values to make an http request for data
     fetch(l) // defaults to a GET request (asynchronous)
-        .then(response => response.json())
+        // .then((response) => {return response.json()}) /alternative long-hand syntax
+        .then(response => response.json()) // grab the JSON bit of the response
+        // alternatively .text or .xml or .html instead of .json
         .then(data => console.log(data));
 }
 // event bindings
