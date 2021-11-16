@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using jQuery in web pages</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // remember - js code should live in an external file
+        $(function () {
+            // now the page is ready...
+            console.log('jQuery has started')
+            // we can access parts of the DOM
+            $('h1').click(function () {
+                console.log('h1 clicked')
+                $(this)
+                    .fadeOut('slow') // or hide() and show()
+                    .fadeIn("slow")
+            })
+            $('.main').fadeOut().fadeIn() // dot indicates a class
+            $('#t').fadeOut().fadeIn()    // hash indicates an id
+            // careful - EVERYTHING related to jQuery MUST be inside these brackets
+            // we can make AJAX calls
+            $.ajax({
+                type:'GET',
+                url:'https://jsonplaceholder.typicode.com/photos/3',
+                success: function(data){// even 404 is success
+                    console.log(data)
+                    // .append is like innerHTML - it appends new content
+                    $('#monitor').empty()
+                    // $('#monitor').append(data['title'])
+                }, 
+                error: function(err){console.log(`oops - ${err}`)}, // the server timed out
+                contentType: "application/json; charset=utf 8", // we may send json to the server
+                dataType:'json' // we expect to receive json back from the server
+            })
+            // or short hand .get, .getJSON, .post etc.
+            $.getJSON('https://jsonplaceholder.typicode.com/photos/4', function(data){
+                console.log(data)
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Welcome to jQuery</h1>
+    <p class='main'>This is a simple example</p>
+    <p class='main'>This is a simple example</p>
+    <p class='main'>This is a simple example</p>
+    <hr/>
+    <div id='monitor'>this content will be emptied away</div>
+    <hr/>
+    <ol>
+        <li id='t'>tag selectors</li>
+        <li id='c'>class selectors</li>
+        <li id='i'>id selectors</li>
+    </ol>
+</body>
+
+</html>
