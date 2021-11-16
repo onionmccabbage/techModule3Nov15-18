@@ -15,8 +15,11 @@ $(function () {
                 html += `<h3>${photo.title}</h3>`
                 // mini exercise - also write the image id and thumbnail URL as list items (as per p278)
                 // also try to show the ACTUAL thumnail images
-
-
+                html += `<ul>`
+                html += `<li>photo ID:${photo.id}</li>`
+                html += `<li>thumbnail:${photo.thumbnailUrl}</li>`
+                html += `</ul>`
+                html += `<img src='${photo.thumbnailUrl}' alt='${photo.title}' />`
             }) // end of .each iterator function
             // inject the HTML fragment into the page
             html += '</div>'
