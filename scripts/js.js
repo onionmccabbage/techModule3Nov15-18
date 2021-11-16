@@ -10,6 +10,18 @@ console.log(j, typeof(j))
 let o = JSON.parse(j) // convert JSON back into a JavaScript structure
 console.log(o, typeof(o))
 
+// looping over data
+let shopItems = ''
+for (i=0; i<model.length; i++){
+    shopItems+= `${model[i]['item']} &pound;${model[i]['price']}`
+    shopItems += '<br/>'
+}
+console.log(shopItems)
+shop.innerHTML = shopItems
+
+
+
+
 // event call-back functions
 const handleButton = () => {
     // prevent the form from submitting!!
